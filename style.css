@@ -1,0 +1,30 @@
+/* This is styling of the header */
+.navbar {
+  background-color: #fbded0 !important; /* override Bootstrap */
+  padding: 1rem 2rem;
+}
+
+/* Brand/logo */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #A53860;
+}
+
+/* Nav links */
+.nav-link {
+  color: #A53860;
+  margin-left: 15px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #f9a826; /* highlight on hover */
+  text-decoration: underline;
+}
+
+/* Active link */
+.nav-link.active {
+  color: #ffffff;
+  font-weight: bold;
+}
