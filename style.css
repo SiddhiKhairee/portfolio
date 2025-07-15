@@ -16,15 +16,65 @@
   color: #A53860;
   margin-left: 15px;
   transition: color 0.3s ease;
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-link::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Adjust to position the heart properly */
+  width: 100%;
+  height: 15px; /* Adjust based on your heart image's height */
+  background-image: url('images/hearts-underline.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; /* Ensures the heart scales with the link width */
+  opacity: 0; /* Start invisible */
+  transform: scale(0.8); /* Start slightly smaller */
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .nav-link:hover {
-  color: #f9a826; /* highlight on hover */
-  text-decoration: underline;
+  color: #E53888; /* highlight on hover */
+  /* text-decoration: underline; */
+}
+
+.nav-link:hover::after{
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* Active link */
 .nav-link.active {
   color: #ffffff;
   font-weight: bold;
+}
+
+.navbar-toggler{
+  border: none !important;
+  outline: none !important;
+}
+
+.navbar-toggler-icon{
+  background-image: url('images/hamburger-heart.png');
+  width: 50px;
+  height: 50px;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    text-align: center; /* Center-align mobile menu items */
+  }
+  
+  .nav-link::after {
+    left: 50%; /* Center the heart */
+    width: 100px; /* Fixed width for the heart */
+    transform: translateX(-50%) translateY(5px) scale(0.8); /* Center horizontally */
+  }
+  
+  .nav-link:hover::after {
+    transform: translateX(-50%) translateY(0) scale(1); /* Adjusted for centering */
+  }
 }
